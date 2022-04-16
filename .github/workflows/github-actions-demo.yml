@@ -4,5 +4,5 @@ jobs:
         show-version:
                 runs-on: ubuntu-latest
                 steps:
-                        - python --version
-                        - docker --version
+                        - run: python3 --version
+                        - run: docker --version
