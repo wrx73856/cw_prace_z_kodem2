@@ -13,6 +13,7 @@ jobs:
                           name: Check the repository
                         - run: |
                                 source venv/bin/activate
+                                pip install pylint
                                 pylint app.py
         build-image-docker:
                 runs-on: ubuntu-latest
