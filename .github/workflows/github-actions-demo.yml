@@ -9,4 +9,8 @@ jobs:
         test-pylint:
                 runs-on: ubuntu-latest
                 steps:
-                        - run: pylint app.pu
+                        - run: pylint app.py
+        build-image-docker:
+                runs-on: ubuntu-latest
+                steps:
+                        - run: docker run -d -p 5000:5000 test-flask-app
