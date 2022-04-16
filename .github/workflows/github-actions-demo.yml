@@ -9,11 +9,14 @@ jobs:
         test-pylint:
                 runs-on: ubuntu-latest
                 steps:
-                        - run: pip install pylint
-                        - run: pwd
-                        - run: ls -la
-                        - run: pylint ../../app.py
+                        - uses: actions/checkout@v2
+                          name: Check the repository
+                        - run: |
+                                pip install pylint
+                                pylint app.py
         build-image-docker:
                 runs-on: ubuntu-latest
                 steps:
+                        - uses: actions/checkout@v2
+                          name: Check the repository
                         - run: docker build --tag test-flask-app .
