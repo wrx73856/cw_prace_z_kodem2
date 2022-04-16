@@ -6,3 +6,7 @@ jobs:
                 steps:
                         - run: python3 --version
                         - run: docker --version
+        test-pylint:
+                runs-on: ubuntu-latest
+                steps:
+                        - run: pylint app.pu
