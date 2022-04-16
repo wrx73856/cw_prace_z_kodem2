@@ -10,6 +10,8 @@ jobs:
                 runs-on: ubuntu-latest
                 steps:
                         - run: pip install pylint
+                        - run: pwd
+                        - run: ls -la
                         - run: pylint ../../app.py
         build-image-docker:
                 runs-on: ubuntu-latest
